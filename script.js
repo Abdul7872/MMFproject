@@ -17,16 +17,12 @@ let mouseYEndPoint = window.innerHeight;
 let currentYPosition = 0;
 let fracYValue = 0;
 
-//let mouseXRange = mouseXEndPoint - mouseXStratPoint;
-
 const mouseMove = (event) => {
     currentXPosition = event.clientX;
     fracXValue = currentXPosition / mouseXEndPoint ;
 
     currentYPosition = event.clientY;
     fracYValue = currentYPosition / mouseYEndPoint;
-
-    //console.log( `${fracXValue}  ${fracYValue}`)
 
     let pupilXCurrentPosition =pupilStartPoint + (fracXValue * pupilRange) ;
     let pupilYCurrentPosition =pupilStartPoint + (fracYValue * pupilRange) ;
@@ -43,3 +39,4 @@ const windowResize =(event) =>{
 
 window.addEventListener('mousemove', mouseMove);
 window.addEventListener('resize', windowResize);
+
